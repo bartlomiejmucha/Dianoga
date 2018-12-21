@@ -118,6 +118,14 @@ namespace Dianoga.Optimizers
 			try
 			{
 				toolProcess.Start();
+				try
+				{
+					toolProcess.PriorityClass = ProcessPriorityClass.Idle;
+				}
+				catch (Exception e)
+				{
+					// do nothig if changing priority throws error
+				}
 			}
 			catch (Exception ex)
 			{

@@ -21,7 +21,7 @@ namespace Dianoga.Tests.Optimizers.Pipelines.DianogaWebP
 			var sut = new WebPOptimizer();
 			sut.ExePath = @"..\..\..\Dianoga\Dianoga Tools\libwebp-0.4.1-windows-x64\bin\cwebp.exe";
 
-			var args = new OptimizerArgs(inputStream);
+			var args = new OptimizerArgs(inputStream, true);
 
 			var startingSize = args.Stream.Length;
 
@@ -44,7 +44,7 @@ namespace Dianoga.Tests.Optimizers.Pipelines.DianogaWebP
 			var sut = new WebPOptimizer();
 			sut.ExePath = @"..\..\..\Dianoga\Dianoga Tools\libwebp-0.4.1-windows-x64\bin\cwebp.exe";
 
-			var args = new OptimizerArgs(inputStream);
+			var args = new OptimizerArgs(inputStream, true);
 
 			var startingSize = args.Stream.Length;
 

@@ -8,8 +8,11 @@ namespace Dianoga.Invokers.MediaCacheAsync.Pipelines.Initialize
 	{
 		public virtual void Process(PipelineArgs args)
 		{
-			MediaManager.Cache = new OptimizingMediaCache(new MediaOptimizer());
-			Log.Info("Dianoga: Installed optimizing media cache to provide async optimization.", this);
+			if (!(MediaManager.Cache is OptimizingMediaCache))
+			{
+				MediaManager.Cache = new OptimizingMediaCache(new MediaOptimizer());
+				Log.Info("Dianoga: Installed optimizing media cache to provide async optimization.", this);
+			}
 		}
 	}
 }
